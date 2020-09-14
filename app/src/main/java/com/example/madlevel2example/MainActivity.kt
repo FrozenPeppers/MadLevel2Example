@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        initViews()
     }
 
     private fun initViews() {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             val reminderModel = ReminderModel(reminder)
             reminders.add(reminderModel)
             reminderAdapter.notifyDataSetChanged()
-            etReminder.text.clear()
+            etReminder.text?.clear()
         } else {
             Snackbar.make(etReminder, "you must fill in the input field", Snackbar.LENGTH_SHORT)
                 .show()
